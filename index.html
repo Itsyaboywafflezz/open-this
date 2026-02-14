@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Issa 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2b0a3d, #4b0082, #6a0dad);
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed; bottom: -10px; font-size: 20px; color: #d8b4ff;
+    animation: floatUp 6s linear infinite; opacity:0.7;
+}
+@keyframes floatUp { 0% {transform:translateY(0) scale(1); opacity:0.7;} 100% {transform:translateY(-110vh) scale(1.5); opacity:0;} }
+
+/* Buttons */
+button {
+    padding:12px 30px; border:none; border-radius:30px;
+    background:#d8b4ff; color:#2b0a3d; font-size:1rem;
+    cursor:pointer; transition:0.3s ease;
+    box-shadow:0 0 15px rgba(216,180,255,0.6);
+}
+button:hover {background:white; transform:scale(1.05);}
+
+/* Landing & Letter Sections */
+#landing, #letterContainer {
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center; text-align:center;
+    min-height:100vh; padding:40px;
+}
+
+/* Add spacing below landing title */
+#landing h1 {
+    margin-bottom: 30px;
+}
+
+#letterContainer {display:none; max-width:700px; margin:0 auto 50px auto;}
+
+/* Letter Card */
+.letterCard {
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    padding:30px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    max-width:700px; width:100%; margin:20px auto; text-align:center; /* center text */
+}
+
+#letterContainer p {
+    line-height:1.8; font-size:1.05rem; opacity:0.9; white-space:pre-line;
+    text-align: center; /* center text */
+}
+.signature {margin-top:20px; font-style:italic; opacity:0.8; margin-bottom:20px; text-align:center;}
+
+.fadeIn {animation: fadeIn 1s forwards;}
+@keyframes fadeIn {from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- Floating Hearts -->
+<script>
+for (let i=0;i<15;i++){
+    let heart=document.createElement("div");
+    heart.classList.add("heart"); heart.innerHTML="💜";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+4)+"s";
+    heart.style.fontSize=(Math.random()*15+15)+"px";
+    document.body.appendChild(heart);
+}
+</script>
+
+<!-- Landing Section -->
+<div id="landing">
+    <h1>For Crissa 💜</h1>
+    <button id="openLetterBtn">Open Your Letter 💌</button>
+</div>
+
+<!-- Letter Section -->
+<div id="letterContainer">
+    <div class="letterCard">
+        <p>
+Hiiiii Issa, Happy Valentine’s Day! Syempre, kung may note ka sakin, may website ako for you, diba, para fair HAHAHAH. Kidding aside, I was actually gonna do this nung Friday, but yeah… I fell asleep 😭. But sa note mo, and you said na “I hope you like me,” you already know the answer to that: I like you, Issaa 💜. I’m not rushing it; I just like to get to know you more.
+
+But still, I didn’t want this day to pass without telling you how much you mean to me. Thank you for being my comfort person and for always making my days lighter. I appreciate you more than I say, and I’m really grateful to have you — kahit matampuhin ka pa and super hirap suyuin minsan 😭 Syempriii, ikaw na yan ihhh.
+
+Remember, I’m always here for you, okay? If you need help, especially sa acads mo, I got you. No hesitation, no judgement—just me supporting you always.
+
+Happy Valentine’s Day again, Issa
+        </p>
+        <div class="signature">From Miaaan</div>
+
+        <!-- Flower Button goes to new page -->
+        <button id="flowerBtn" onclick="window.location.href='flower.html'">See Your Flower 🌷</button>
+    </div>
+</div>
+
+<script>
+// Show letter container when clicking landing button
+const openLetterBtn = document.getElementById("openLetterBtn");
+const landing = document.getElementById("landing");
+const letterContainer = document.getElementById("letterContainer");
+openLetterBtn.addEventListener("click", ()=>{
+    landing.style.display="none";
+    letterContainer.style.display="block";
+    letterContainer.classList.add("fadeIn");
+});
+</script>
+
+</body>
+</html>
